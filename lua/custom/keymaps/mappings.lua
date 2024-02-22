@@ -16,8 +16,8 @@ vim.o.mouse = ''
 vim.keymap.set('n', '<leader>f', function(_) vim.lsp.buf.format() end, { desc = 'Format code' })
 
 -- Keymap to allow moving up and down selected text while in visual mode
-vim.keymap.set('v', '<A-j>', ":m '>+1<CR>gv=gv")
-vim.keymap.set('v', '<A-k>', ":m '<-2<CR>gv=gv")
+vim.keymap.set('v', '<Down>', ":m '>+1<CR>gv=gv")
+vim.keymap.set('v', '<Up>', ":m '<-2<CR>gv=gv")
 --vim.keymap.set('v', '<A-l>', ":m '<-2<CR>gv=gv")
 --vim.keymap.set('v', '<A-h>', ":m '<-2<CR>gv=gv")
 
