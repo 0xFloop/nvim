@@ -590,15 +590,29 @@ local servers = {
   -- clangd = {},
   -- gopls = {},
   -- pyright = {},
-  tsserver                    = {},
+
+  tsserver                    = {
+    typescript = {
+      inlayHints = {
+        includeInlayParameterNameHints = "all", -- 'none' | 'literals' | 'all'
+        includeInlayParameterNameHintsWhenArgumentMatchesName = true,
+        includeInlayVariableTypeHints = true,
+        includeInlayFunctionParameterTypeHints = true,
+        includeInlayVariableTypeHintsWhenTypeMatchesName = true,
+        includeInlayPropertyDeclarationTypeHints = true,
+        includeInlayFunctionLikeReturnTypeHints = true,
+        includeInlayEnumMemberValueHints = true,
+      },
+    },
+  },
   --html = { filetypes = { 'html', 'twig', 'hbs'} },
   solidity_ls_nomicfoundation = {},
   rust_analyzer               = {
-    cargo = { allFeatures = true },
-    checkOnSave = { command = 'clippy' },
-    diagnostics = {
-      disabled = { "unused-variables" }
-    },
+    ["rust-analyzer"] = {
+      cmd = "/home/unnamed/.cargo/bin/rust-analyzer",
+      cargo = { allFeatures = true },
+      checkOnSave = { command = 'clippy' },
+    }
   },
   lua_ls                      = {
     Lua = {
